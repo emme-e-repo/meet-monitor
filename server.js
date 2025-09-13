@@ -10,6 +10,7 @@ app.use(express.json());
 
 // Salva log
 app.post('/api/log', (req, res) => {
+  console.log('[SERVER] Ricevuto log:', req.body);  
   const log = req.body;
   let data = [];
   if (fs.existsSync(DATA_FILE)) {

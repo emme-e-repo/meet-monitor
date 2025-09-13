@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Meet Monitor EXT",
+    "version": "2.0",
+    "description": "Monitora durata e partecipanti delle chiamate Google Meet",
+    "permissions": [
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://meet.google.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_title": "Meet Monitor"
+    }
+  }
+  
+  
